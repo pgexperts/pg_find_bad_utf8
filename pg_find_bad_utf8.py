@@ -38,8 +38,8 @@ for line in sys.stdin:
                 if linenum == 1:
                         sys.stdout.write(searchpath)
                         sys.stdout.write(copyline)
-                        schema = re.sub(r"SET search_path = (.*), .*$", r"\1", searchpath.replace('\n', '') )
-                        table = re.sub(r"^COPY (\w+) .+ FROM stdin;$", r"\1", copyline.replace('\n', '') )
+                        schema = re.sub(r'SET search_path = (.*), .*$', r'\1', searchpath.replace('\n', '') )
+                        table = re.sub(r'^COPY ("?[\w/_-]+"?) .+ FROM stdin;$', r'\1', copyline.replace('\n', '') )
                         fqtable = schema + '.' + table
                         badtables.append(fqtable)
                 sys.stdout.write(line)
