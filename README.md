@@ -19,3 +19,7 @@ pg_dump --schema-only --table badtable1 --table badtable2 mydb | psql badtables
 Then load your SQL file full of COPY commands:
 
 psql -f badtables.sql badtables
+
+This script is licensed under the PostgreSQL License. See the LICENSE file for
+details.
+
